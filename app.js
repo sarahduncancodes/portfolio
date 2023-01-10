@@ -1,6 +1,7 @@
 //add the express package
 var express = require("express"); 
 var app = express();
+var projects = require("./projects.json");
 
 //add express handlebars - for html
 var exphbs = require("express-handlebars");
@@ -12,6 +13,8 @@ var path = require("path");
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
+
+console.log(projects["1"]);
 
 //add node-mailer
 var nodeMailer = require("nodemailer");
@@ -72,6 +75,11 @@ app.post("/contact", function(req, res){
         }
     });
 });
+
+//work page
+app.get("/work", function(req, res){
+    res.render("work", {projects:projects});
+})
 
 //set the port to listen on
 var port = process.env.PORT || 8080;

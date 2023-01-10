@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    {{>main}}
+    <div class="recent">
+        <div class="recent-title">Recent work</div>
+        <div class="recent-categories">
+            <div class="category" onclick="showAll()">All</div>
+            <div class="category" onclick="showWork()">Work Projects</div>
+            <div class="category" onclick="showPassion()">Passion Projects</div>
+        </div>
+    </div>
+    {{#each projects}}
+    <a class="work-obj" id="{{id}}" href="/project/{{id}}">
+        <img src="{{coverphoto}}" class="work-img">
+        <div class="work-overlay"></div>        
+        <div class="work-title">{{title}}</div>
+    </a>
+    {{/each}}
+
+    {{>footer}}
+</body>
+</html>
+
+<script>
+    var one = document.getElementById("1");
+    var two = document.getElementById("2");
+
+    function showWork(){
+        one.style.display="none";
+        two.style.display="inline-block";
+    }
+
+    function showPassion(){
+        one.style.display="inline-block";
+        two.style.display="none";
+    }
+
+    function showAll(){
+        one.style.display="inline-block";
+        two.style.display="inline-block";
+    }
+
+</script>
