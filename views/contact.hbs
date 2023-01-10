@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    {{>main}}
+    <div class="contact-container">
+        <div class="contact-title">
+            Let's chat
+        </div>
+        <form class="contact-form" id="contact-form" action="/contact" method="POST">
+            <div class="contact-label">Your Name (required)</div>
+            <input type="text" id="fullname" name="fullname" placeholder="Full name">
+
+            <div class="contact-label">Your Email Address (required)</div>
+            <input type="text" id="email" name="email" placeholder="Email Address">
+
+            <div class="contact-label">Subject (required)</div>
+            <input type="text" id="subject" name="subject" placeholder="Subject of your email">
+
+            <div class="contact-label">Message (required)</div>
+            <textarea rows="5" cols="50" name="note" id="note" placeholder="Your message..."></textarea>
+            <input type="submit" value="Submit" onClick="hideContact()">
+        </form>
+        <div id="contact-thankyou">It's good to be in touch. I will get back to you shortly!</div>
+        <div id="submitted">{{submitted}}</div>
+    </div>
+    {{>footer}}
+</body>
+
+</html>
+<script>
+    console.log(document.getElementById("submitted").innerHTML);
+    var submitted = document.getElementById("submitted").innerHTML;
+    console.log(submitted);
+
+    if (submitted == "yes") {
+        var contactForm = document.getElementById("contact-form");
+        var contactThanks = document.getElementById("contact-thankyou");
+        contactForm.style.display = "none";
+        contactThanks.style.display = "block";
+    }
+</script>

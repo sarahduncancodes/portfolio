@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-    {{>main}}
-    <body>
-        <div>Hello, welcome to my portfolio home page!</div>
-        <div>
-            <img src="/photos/header-image.jpg" height="300" width="300"/>
+{{>main}}
+
+<body>
+    <div class="home">
+        <div class="decor">
+            <div class="home-case">
+                <div class="home-box">
+                    <div class="typewriter">
+                        <h1>I'm Sarah, an </h1>
+                    </div>
+                    <div class="typewriter-1">
+                        <h1>apprentice Software Developer </h1>
+                    </div>
+                    <div class="typewriter-2">
+                        <h1>living in Manchester.</h1>
+                    </div>
+                </div>
+                <a class="home-button" href="/work">Recent work</a>
+                <a class="home-button" href="/contact">Contact me</a>
+
+            </div>
         </div>
-    </body>
+    </div>
+    {{>footer}}
+</body>
+
 </html>
