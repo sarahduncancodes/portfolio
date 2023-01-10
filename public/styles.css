@@ -1,3 +1,29 @@
+@font-face {
+    font-family: fontRegular;
+    src: url(fonts/AGaramondPro-Regular.otf);
+}
+
+@font-face {
+    font-family: fontRegularBold;
+    src: url(fonts/AGaramondPro-Bold.otf);
+}
+
+@font-face {
+    font-family: fontRegularItalic;
+    src: url(fonts/AGaramondPro-Italic.otf);
+}
+
+@font-face {
+    font-family: fontTechnology;
+    src: url(fonts/Technology.ttf)
+}
+
+@font-face {
+    font-family: fontCode;
+    src: url(fonts/Astro.ttf)
+}
+
 body{
     background-color:antiquewhite;
+    font-family: fontRegular;
 }
