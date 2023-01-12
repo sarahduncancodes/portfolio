@@ -25,6 +25,7 @@
 
 body {
     font-family: fontRegular;
+    background-color: #DDD0C8;
 }
 
 /* home and footer pages */
@@ -39,7 +40,7 @@ body {
     right: 0;
     height: 70px;
     z-index: 5;
-    background-color: azure;
+    background-color: #323232;
     box-shadow: 0 2px 2px -2px rgba(0, 0, 0.2);
 }
 
@@ -54,13 +55,13 @@ body {
     position: absolute;
     top: 12px;
     left: 50px;
-    color: black;
+    color: white;
     letter-spacing: 0.5px;
-    ;
+    
 }
 
 .name:hover {
-    color: aqua;
+    text-decoration: underline;
 }
 
 .icons {
@@ -79,13 +80,9 @@ body {
 }
 
 .icon {
-    color: black;
+    color: white;
     text-decoration: none;
     cursor: pointer;
-}
-
-.icon:hover {
-    color: aqua;
 }
 
 .menu-icon {
@@ -94,7 +91,7 @@ body {
 }
 
 .menu-icon:hover {
-    color: aqua
+    color: white;
 }
 
 .menu-slide {
@@ -114,7 +111,7 @@ body {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 23px;
-    color: gray;
+    color: #978183;
     display: block;
     transition: 0.3s;
     font-family: fontRegular;
@@ -123,7 +120,7 @@ body {
 }
 
 .menu-slide a:hover {
-    color: white;
+    color: #c7bbbc;
 }
 
 .menu-slide .menu-x {
@@ -167,11 +164,11 @@ body {
 .home-box {
     display: inline-block;
     background-color: white;
-    border: 1.4px solid rgb(136, 213, 233);
+    border: 1.4px solid #c7bbbc;
     width: 450px;
     height: 248px;
     margin: 0;
-    color: rgb(136, 213, 233);
+    color: #c7bbbc;
     font-family: fontRegular;
     font-size: 14px;
     letter-spacing: 3px;
@@ -201,7 +198,7 @@ body {
 
 .home-button:hover {
     background-color: rgb(243, 243, 243);
-    color: rgb(136, 213, 233);
+    color: black;
 }
 
 .typewriter h1,
@@ -255,13 +252,13 @@ a {
 }
 
 .footer {
-    color: rgb(195, 219, 221);
-    background-color: rgb(243, 243, 243);
+    color: white;
+    background-color: #323232;
     width: 100%;
 }
 
 .grey-links {
-    color: rgb(195, 219, 221);
+    color: black;
     height: 192px;
     padding-top: 55px;
     padding-left: 8%
@@ -276,19 +273,15 @@ a {
 }
 
 #linkedin-logo {
-    color: #333;
+    color: black;
     font-size: 20px;
     padding: 28px;
     padding-left: 40px;
 }
 
-#linkedin-logo:hover {
-    color: rgb(136, 213, 233);
-}
-
 .pages {
     text-transform: uppercase;
-    color: rgb(136, 213, 233);
+    color: white;
     font-family: fontRegular;
     font-size: 20px;
     font-weight: 400;
@@ -298,7 +291,7 @@ a {
 }
 
 .grey-link {
-    color: black;
+    color: white;
     font-family: fontRegular;
     font-size: 17px;
     font-weight: 400px;
@@ -306,7 +299,7 @@ a {
 }
 
 .grey-link:hover {
-    color: rgb(136, 213, 233);
+    text-decoration: underline;
 }
 
 /* contact me page */
@@ -314,7 +307,7 @@ a {
 .contact-container {
     width: 60%;
     margin: auto;
-    color: rgb(136, 213, 233);
+    color: black;
 }
 
 .contact-title {
@@ -336,18 +329,21 @@ a {
     width: 100%;
     margin-bottom: 0px;
     margin-top: 18px;
+    transition: all 0.5s ease-in-out;
 }
 
 input[type=text],
-select {
+select,
+textarea {
     width: 93%;
     font-size: 17px;
     font-family: fontRegular;
-    background-color: #f5f5f5;
+    background-color: white;
     padding: 22px 14px;
     margin: 10px 0;
     border: none;
     border-bottom: 2px solid #e0e0e0;
+    transition: all 0.5s ease-in-out;
 }
 
 input[type=submit],
@@ -358,23 +354,45 @@ select {
     padding: 22px 14px;
     margin: 10px 0;
     margin-bottom: 110px;
-    background-color: rgb(136, 213, 233);
+    background-color: #323232;
     color: white;
-    border: 1px solid rgb(136, 213, 233);
+    border: 1px solid #c7bbbc;
     border-radius: 0%;
     -webkit-appearance: none;
     -webkit-border-radius: none;
     cursor: pointer;
+    transition: all 0.5s ease-in-out;
 }
 
 input[type=submit]:hover {
     background-color: white;
-    color: rgb(136, 213, 233);
+    color: black;
 }
 
 input:focus,
 textarea:focus {
     outline: none;
+}
+
+.redBorder {
+    border: 2px solid #745848   !important;
+}
+
+.red-label {
+    color: #745848  ;
+}
+
+.validation-error {
+    display: none;
+    color: #745848 ;
+    transition: all 0.5s ease-in-out;
+}
+
+.validation-error-name,
+.validation-error-email,
+.validation-error-subject,
+.validation-error-message {
+    display: flex;
 }
 
 #contact-thankyou {
@@ -390,7 +408,6 @@ textarea:focus {
 }
 
 .contact-home-button {
-    display: none;
     width: 12%;
     font-size: 17px;
     font-family: fontRegular;
@@ -398,9 +415,9 @@ textarea:focus {
     position: absolute;
     left: 20%;
     padding: 15px 0px;
-    background-color: rgb(136, 213, 233);
+    background-color: #323232;
     color: white;
-    border: 1px solid rgb(136, 213, 233);
+    border: 1px solid #c7bbbc;
     border-radius: 0%;
     -webkit-appearance: none;
     -webkit-border-radius: none;
@@ -410,7 +427,7 @@ textarea:focus {
 
 .contact-home-button:hover {
     background-color: white;
-    color: rgb(136, 213, 233);
+    color: #323232;
 }
 
 #note {
@@ -461,7 +478,7 @@ textarea:focus {
 }
 
 .category:hover {
-    color: #272727;
+    color: #745848 ;
 }
 
 .work-projects {
@@ -521,6 +538,7 @@ textarea:focus {
     position: absolute;
     padding-left: 30px;
     padding-right: 30px;
+    padding-bottom: 10px;
     bottom: 10px;
     left: 0;
     z-index: 4;
@@ -536,7 +554,7 @@ textarea:focus {
     width: 100%;
     margin-top: 61px;
     font-family: fontRegular;
-    color: #444;
+    color: black;
     text-transform: uppercase;
     background-size: cover;
 }
@@ -575,7 +593,7 @@ textarea:focus {
     margin-left: 10%;
     width: 65%;
     font-family: fontRegular;
-    color: #656565;
+    color: black;
 }
 
 .project-des {
@@ -602,7 +620,7 @@ textarea:focus {
 }
 
 .project-web-name:hover {
-    color: aqua;
+    color: #745848 ;
 }
 
 .project-deliv-title,
@@ -642,7 +660,7 @@ textarea:focus {
     justify-content: space-around;
     padding: 20px;
     margin: 20px;
-    background-color: rgb(243, 243, 243);
+    background-color: white;
     transition: all 300ms ease-in-out;
 }
 
@@ -673,7 +691,7 @@ textarea:focus {
 .about-intro {
     width: 85%;
     margin: auto;
-    color: #3dcdd6;
+    color: #978183;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -692,6 +710,8 @@ textarea:focus {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    background-color: white;
+    margin-bottom: 10px;
 }
 
 .about-content-1,
@@ -707,12 +727,11 @@ textarea:focus {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    margin: 20px;
 }
 
 .about-content-2 {
     color: black;
-    background-color: rgb(243, 243, 243);
-    border-radius: 2%;
     padding: 5px 20px;
 }
 
@@ -741,16 +760,16 @@ textarea:focus {
 }
 
 .about-des-1 {
-    background-color: rgb(217, 229, 240);
+    background-color: #dfd9d9;
     flex-grow: 500px;
 }
 
 .about-des-2 {
-    background-color: rgb(191, 209, 229);
+    background-color: #cbc0c1;
 }
 
 .about-des-3 {
-    background-color: rgb(166, 189, 219);
+    background-color: #b6a6a8;
 }
 
 .about-headshot {
@@ -758,6 +777,7 @@ textarea:focus {
     margin: auto;
     padding: 50px;
 }
+
 
 .about-des {
     font-family: fontRegular;
@@ -770,14 +790,14 @@ textarea:focus {
 .about-whatido {
     font-family: fontRegular;
     text-transform: uppercase;
-    color: #36cdd6;
+    color: #978183;
     margin-top: 33px;
     margin-bottom: 10px;
     letter-spacing: 1px;
 }
 
 .about-whatido:hover {
-    color: aqua;
+    color: black;
 }
 
 .about-what {
@@ -792,7 +812,7 @@ textarea:focus {
     height: 330px;
     margin-top: 50px;
     background-color: #e2e2e2;
-    color: #444;
+    color: black;
     text-align: center;
 }
 
@@ -806,7 +826,7 @@ textarea:focus {
 }
 
 .about-ready:hover {
-    color: #89dcd9;
+    color: #978183;
 }
 
 .about-chat {
@@ -820,14 +840,14 @@ textarea:focus {
 }
 
 .about-chat:hover {
-    color: black;
-    background-color: aqua;
+    color: white;
+    background-color: #c7bbbc;
     border: 2px solid black;
 
 }
 
 .openMenu {
-    width:300px;
+    width: 300px;
 }
 
 /* media queries */
@@ -838,7 +858,7 @@ textarea:focus {
         left: 5px;
     }
 
-    .menu-icon:before{
+    .menu-icon:before {
         font-size: 20px;
     }
 
@@ -861,7 +881,7 @@ textarea:focus {
         padding-bottom: 20px;
     }
 
-    .home-box-text{
+    .home-box-text {
         vertical-align: middle;
     }
 
@@ -877,7 +897,7 @@ textarea:focus {
         margin-top: 20px;
     }
 
-    .typewriter h1{
+    .typewriter h1 {
         margin-top: 20px;
     }
 
@@ -892,50 +912,50 @@ textarea:focus {
         margin: 20px;
     }
 
-    .work-projects{
+    .work-projects {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .work-obj{
+    .work-obj {
         height: 100%;
         max-width: 700px;
     }
 
-    .work-title{
+    .work-title {
         padding-bottom: 10px;
     }
 
     .openMenu {
-        width:100%;
+        width: 100%;
     }
 
-    .recent{
+    .recent {
         align-items: center;
     }
 }
 
 @media only screen and (min-width:800px) and (max-width: 1000px) {
-.about-content-1{
-    width:40%;
-    margin-right:20px;
-}
+    .about-content-1 {
+        width: 40%;
+        margin-right: 20px;
+    }
 }
 
 @media only screen and (max-width: 500px) {
-    .recent{
-        display: flex;
-        flex-direction: column;
-    }
-    .recent-categories{
+    .recent {
         display: flex;
         flex-direction: column;
     }
 
-    .footer{
+    .recent-categories {
         display: flex;
         flex-direction: column;
     }
 
+    .footer {
+        display: flex;
+        flex-direction: column;
     }
+}

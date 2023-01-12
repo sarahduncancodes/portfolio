@@ -8,21 +8,41 @@
             Let's chat
         </div>
         <form class="contact-form" id="contact-form" action="/contact" method="POST">
-            <div class="contact-label">Your Name (required)</div>
-            <input type="text" id="fullname" name="fullname" placeholder="Full name">
 
-            <div class="contact-label">Your Email Address (required)</div>
-            <input type="text" id="email" name="email" placeholder="Email Address">
+            <div class="contact-label" id="name-label">Your Name (required)
+                <span id="validation-error-name" class="validation-error">Please input your name, which is expected to
+                    be more than 3 characters.</span>
+            </div>
 
-            <div class="contact-label">Subject (required)</div>
-            <input type="text" id="subject" name="subject" placeholder="Subject of your email">
+            <input type="text" id="name" placeholder="Full name"> <br>
 
-            <div class="contact-label">Message (required)</div>
-            <textarea rows="5" cols="50" name="note" id="note" placeholder="Your message..."></textarea>
-            <input type="submit" value="Submit" onClick="hideContact()">
+            <div class="contact-label" id="email-label">Your Email Address (required) <span id="validation-error-email"
+                    class="validation-error">Please input the email address that I can respond to you with, which should
+                    be more than 3 characters.</span></div>
+            <input type="text" id="email" placeholder="Email Address"><br>
+
+            <div class="contact-label" id="subject-label">Subject (required)
+                <span id="validation-error-subject" class="validation-error">Please input the subject of the email,
+                    which
+                    should be more than 3
+                    characters.</span>
+            </div>
+            <input type="text" id="subject" placeholder="Subject of your email"><br>
+
+
+            <div class="contact-label" id="message-label">Message (required)
+                <span id="validation-error-message" class="validation-error">Please input a message between 5 and 500
+                    characters.</span>
+            </div>
+            <textarea rows="5" cols="50" id="message" placeholder="Your message..."></textarea><br>
+            <input type="submit" value="Submit" id="submitForm">
+
         </form>
-        <div id="contact-thankyou">It's good to be in touch. I will get back to you shortly!
-            <a class="contact-home-button" id="contact-home-button" href="/">Back to the home page</a>
+        <div id="contact-thankyou">
+            It's good to be in touch. I will get back to you shortly!
+            <a class="contact-home-button" id="contact-home-button" href="/">
+                Back to the home page
+            </a>
         </div>
         <div id="submitted">{{submitted}}</div>
     </div>
@@ -30,10 +50,74 @@
 </body>
 
 </html>
+
 <script>
+
+    document.getElementById("submitForm").addEventListener("click", function (event) {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let subject = document.getElementById("subject").value;
+        let message = document.getElementById("message").value;
+
+        if (name == null || name == '' || name.length < 3) {
+            document.getElementById("name-label").classList.add('red-label');
+            document.getElementById("name").classList.add('redBorder');
+            document.getElementById("validation-error-name").classList.add('validation-error-name');
+            setTimeout(function () {
+                document.getElementById("name-label").classList.remove('red-label');
+                document.getElementById("validation-error-name").classList.remove('validation-error-name');
+                document.getElementById("name").classList.remove('redBorder');
+            }, 5000);
+            event.preventDefault();
+
+            return false;
+        }
+
+        if (email == null || email == '' || email.length < 3) {
+            document.getElementById("email").classList.add('redBorder');
+            document.getElementById("email-label").classList.add('red-label');
+            document.getElementById("validation-error-email").classList.add('validation-error-email');
+            setTimeout(function () {
+                document.getElementById("email-label").classList.remove('red-label');
+                document.getElementById("validation-error-email").classList.remove('validation-error-email');
+                document.getElementById("email").classList.remove('redBorder');
+            }, 5000);
+            event.preventDefault()
+            return false;
+        }
+
+        if (subject == null || subject == '' || subject.length < 3) {
+            document.getElementById("subject").classList.add('redBorder');
+            document.getElementById("subject-label").classList.add('red-label');
+            document.getElementById("validation-error-subject").classList.add('validation-error-subject');
+
+            setTimeout(function () {
+                document.getElementById("subject-label").classList.remove('red-label');
+                document.getElementById("validation-error-subject").classList.remove('validation-error-subject');
+                document.getElementById("subject").classList.remove('redBorder');
+            }, 5000);
+            event.preventDefault()
+            return false;
+        }
+
+        if (message.length < 5 || message.length > 500) {
+            document.getElementById("message").classList.add('redBorder');
+            document.getElementById("message-label").classList.add('red-label');
+            document.getElementById("validation-error-message").classList.add('validation-error-message');
+
+            setTimeout(function () {
+                document.getElementById("validation-error-message").classList.remove('validation-error-message');
+                document.getElementById("message").classList.remove('redBorder');
+                document.getElementById("message-label").classList.remove('red-label');
+            }, 5000);
+            event.preventDefault()
+            return false;
+        }
+
+    });
+
     console.log(document.getElementById("submitted").innerHTML);
     var submitted = document.getElementById("submitted").innerHTML;
-    console.log(submitted);
 
     if (submitted == "yes") {
         var contactForm = document.getElementById("contact-form");

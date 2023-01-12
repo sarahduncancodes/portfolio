@@ -1,14 +1,15 @@
 {
     "1": {
         "id": "1",
-        "title": "Apprenticeships: Return on Investment Tool",
+        "title": "Understanding Apprenticeship Benefits and Funding",
         "category": "A project I did at work",
-        "description": "A tool for employers (that could potentially hire apprentices) to calculate their return on investment on hiring and training an apprentice.",
+        "description": "A tool for employers, who could potentially hire apprentices, to calculate their return on investment on hiring and training an apprentice. This tool is placed within the UK government's official apprenticeships site. This site provides inspiration to aspiring apprentices, and motivation for employers to hire apprentices. Hence, the goal of this Return on Investment tool, placed within the employer-aimed part of the site, is to motivate potential employers with a combination of non-financial and financial benefits. ",
         "sitename": "apprenticeships.gov.uk",
         "url": "https://www.apprenticeships.gov.uk/employers/understanding-apprenticeship-benefits-and-funding",
         "deliverables": [
             "Promotional Page",
-            "Contributing to the Department for Education's official goals for Apprenticeships which are to be achieved by 2025."
+            "Contributing to the Department for Education's official goals for Apprenticeships which are to be achieved by 2025.",
+            "An increase in the number of employers signing up to the Apprenticeship Service to begin their apprenticeship journey."
         ],
         "tools": [
             "dotnetcore 6.0",
@@ -22,13 +23,13 @@
     },
     "2": {
         "id": "2",
-        "title": "Apprenticeships: Notification Settings",
+        "title": "Apprentice Notification Settings",
         "category": "A project I did at work",
-        "description": "A tool placed within the apprentice's account for them to set their preferences on which notifications they'd like to recieve and which notifications they do not want to recieve from the Apprenticeship Service.",
+        "description": "A tool placed within the apprentice's account for them to set their preferences on which notifications they'd like to recieve and which notifications they would prefer not to recieve from the Apprenticeship Service. Currently there is only one option for the user to state a preference on, however this site is dynamic. So, as new types of notifications become optional to the user and these notifications are added to the database, they will show up on the interface too. The Apprenticeship Service uses varying contact-channels from email to text message to mail. This site is able to cater for all of these. This project was my first project as a new apprentice (Feb to June of 2022). It was very exciting to be able to log in to my own apprentice account and see something I built.",
         "sitename": "apprenticeships.gov.uk",
         "url": "https://my.apprenticeships.education.gov.uk/",
         "deliverables": [
-            "Notifications tool"
+            "User-friendly settings for users to specify what notifications they'd like to recieve from the organisation."
         ],
         "tools": [
             ".NET 3.1",
@@ -46,14 +47,14 @@
         "id": "3",
         "title": "My Portfolio",
         "category": "A passion project",
-        "description": "A website I built as my personal portfolio to showcase my work.",
+        "description": "A website I built as my personal portfolio to showcase my work. At work, during my apprenticeship, I have been learning to build products with .NET. During an internship outside of my work I created this site. This project was built in JavaScript and node.js by following a Udemy course. Following the course, I personalised the site.",
         "sitename": "this site!",
         "url": "/",
         "deliverables": [
-            "Portfolio"
+            "My own portfolio"
         ],
         "tools": [
-            ".JavaScript",
+            "JavaScript",
             "node.js",
             "HTML & CSS",
             "JSON"
