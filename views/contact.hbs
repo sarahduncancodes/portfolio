@@ -21,7 +21,9 @@
             <textarea rows="5" cols="50" name="note" id="note" placeholder="Your message..."></textarea>
             <input type="submit" value="Submit" onClick="hideContact()">
         </form>
-        <div id="contact-thankyou">It's good to be in touch. I will get back to you shortly!</div>
+        <div id="contact-thankyou">It's good to be in touch. I will get back to you shortly!
+            <a class="contact-home-button" id="contact-home-button" href="/">Back to the home page</a>
+        </div>
         <div id="submitted">{{submitted}}</div>
     </div>
     {{>footer}}
@@ -36,7 +38,10 @@
     if (submitted == "yes") {
         var contactForm = document.getElementById("contact-form");
         var contactThanks = document.getElementById("contact-thankyou");
+        var contactHomeButton = document.getElementById("contact-home-button");
         contactForm.style.display = "none";
         contactThanks.style.display = "block";
+        contactHomeButton.style.display = "block"
+
     }
 </script>

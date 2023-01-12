@@ -1,27 +1,65 @@
-{"1":{
-    "id":"1",
-    "title":"Apprenticeships: Employers ROI tool",
-    "category":"At work",
-    "description":"A tool for potential apprenticeship employers to calculate their return on investment.",
-    "sitename": "Apprenticeships",
-    "url":"https://www.apprenticeships.gov.uk/employers/understanding-apprenticeship-benefits-and-funding",
-    "deliverables":["Artist Website", "Promotional Page"],
-    "tools":["JavaScript", "HTML & CSS"],
-    "coverphoto":"photos/apprenticeships-cover.png",
-    "bannerphoto":"photos/apprenticeships-banner.png",
-    "partial":"post"
-},
-"2":{
-    "id":"2",
-    "title":"Apprenticeships: Employers ROI tool",
-    "category":"Passion projects",
-    "description":"A tool for potential apprenticeship employers to calculate their return on investment.",
-    "sitename": "Apprenticeships",
-    "url":"https://www.apprenticeships.gov.uk/employers/understanding-apprenticeship-benefits-and-funding",
-    "deliverables":["Artist Website", "Promotional Page"],
-    "tools":["JavaScript", "HTML & CSS"],
-    "coverphoto":"photos/apprenticeships-cover.png",
-    "bannerphoto":"photos/apprenticeships-banner.png",
-    "partial":"snap"
-}
+{
+    "1": {
+        "id": "1",
+        "title": "Apprenticeships: Return on Investment Tool",
+        "category": "A project I did at work",
+        "description": "A tool for employers (that could potentially hire apprentices) to calculate their return on investment on hiring and training an apprentice.",
+        "sitename": "apprenticeships.gov.uk",
+        "url": "https://www.apprenticeships.gov.uk/employers/understanding-apprenticeship-benefits-and-funding",
+        "deliverables": [
+            "Promotional Page",
+            "Contributing to the Department for Education's official goals for Apprenticeships which are to be achieved by 2025."
+        ],
+        "tools": [
+            "dotnetcore 6.0",
+            "ASP.NET Core",
+            "Contentful (Content Management System)",
+            "HTML & CSS"
+        ],
+        "coverphoto": "../photos/apprenticeships-cover.png",
+        "bannerphoto": "../photos/apprenticeships-banner.png",
+        "partial": "roi"
+    },
+    "2": {
+        "id": "2",
+        "title": "Apprenticeships: Notification Settings",
+        "category": "A project I did at work",
+        "description": "A tool placed within the apprentice's account for them to set their preferences on which notifications they'd like to recieve and which notifications they do not want to recieve from the Apprenticeship Service.",
+        "sitename": "apprenticeships.gov.uk",
+        "url": "https://my.apprenticeships.education.gov.uk/",
+        "deliverables": [
+            "Notifications tool"
+        ],
+        "tools": [
+            ".NET 3.1",
+            "ASP.NET Core",
+            "T-SQL",
+            "Entity Framework",
+            "HTML & CSS",
+            "Microsoft SQL Server 2019"
+        ],
+        "coverphoto": "../photos/app-notifications-banner.png",
+        "bannerphoto": "../photos/app-notifications-banner.png",
+        "partial": "notifications"
+    },
+    "3": {
+        "id": "3",
+        "title": "My Portfolio",
+        "category": "A passion project",
+        "description": "A website I built as my personal portfolio to showcase my work.",
+        "sitename": "this site!",
+        "url": "/",
+        "deliverables": [
+            "Portfolio"
+        ],
+        "tools": [
+            ".JavaScript",
+            "node.js",
+            "HTML & CSS",
+            "JSON"
+        ],
+        "coverphoto": "../photos/portfolio-home.png",
+        "bannerphoto": "../photos/portfolio-about.png",
+        "partial": "portfolio"
+    }
 }

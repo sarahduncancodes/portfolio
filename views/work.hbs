@@ -15,35 +15,43 @@
             <div class="category" onclick="showPassion()">Passion Projects</div>
         </div>
     </div>
-    {{#each projects}}
-    <a class="work-obj" id="{{id}}" href="/project/{{id}}">
-        <img src="{{coverphoto}}" class="work-img">
-        <div class="work-overlay"></div>        
-        <div class="work-title">{{title}}</div>
-    </a>
-    {{/each}}
-
+    <div class="work-projects">
+        {{#each projects}}
+        <a class="work-obj" id="{{id}}" href="/project/{{id}}">
+            <img src="{{coverphoto}}" class="work-img">
+            <div class="work-overlay"></div>
+            <div class="work-title">{{title}}</div>
+        </a>
+        {{/each}}
+    </div>
     {{>footer}}
 </body>
+
 </html>
 
 <script>
     var one = document.getElementById("1");
     var two = document.getElementById("2");
+    var three = document.getElementById("3");
 
-    function showWork(){
-        one.style.display="none";
-        two.style.display="inline-block";
+
+    function showWork() {
+        one.style.display = "inline-block";
+        two.style.display = "inline-block";
+        three.style.display = "none";
     }
 
-    function showPassion(){
-        one.style.display="inline-block";
-        two.style.display="none";
+    function showPassion() {
+        one.style.display = "none";
+        two.style.display = "none";
+        three.style.display = "inline-block";
+
     }
 
-    function showAll(){
-        one.style.display="inline-block";
-        two.style.display="inline-block";
+    function showAll() {
+        one.style.display = "inline-block";
+        two.style.display = "inline-block";
+        three.style.display = "inline-block";
     }
 
 </script>

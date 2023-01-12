@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-    </head>
-    <div class="navbar">
-        <a class="name" href="/">
-            Sarah Duncan
-        </a>
-        <div class="icons">
-             <div>
-                <a class="fa fa-navicon icon menu-icon fa-3x" aria-hidden="true" onclick="openMenu()"></a>
-            </div>
-            <div>
-                <a class="fa fa-github-square icon fa-3x" aria-hidden="true" href="https://github.com/sarahduncancodes"></a>
-            </div> 
-            <div>
-                <a class="fa fa-linkedin-square icon fa-3x" aria-hidden="true" href="https://www.linkedin.com/in/sarahmarycoetzee/"></a>
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<div class="navbar">
+    <a class="name" href="/">
+        Sarah Duncan
+    </a>
+    <div class="icons">
+        <div>
+            <a class="fa fa-navicon icon menu-icon fa-3x" aria-hidden="true" onclick="openMenu()"></a>
         </div>
-
+        <div>
+            <a class="fa fa-github-square icon fa-3x" aria-hidden="true" target="_blank"
+                href="https://github.com/sarahduncancodes"></a>
+        </div>
+        <div>
+            <a class="fa fa-linkedin-square icon fa-3x" aria-hidden="true" target="_blank"
+                href="https://www.linkedin.com/in/sarahmarycoetzee/"></a>
+        </div>
     </div>
 
-    <div id="menu-slide" class="menu-slide">
-        <a href="javascript:void(0)" class="menu-x" onclick="closeMenu()">&times;</a>
-        <a href="/work">Work</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-    </div>
+</div>
+
+<div id="menu-slide" class="menu-slide">
+    <a href="javascript:void(0)" class="menu-x" onclick="closeMenu()">&times;</a>
+    <a href="/work">Work</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+</div>
 
 </html>
 <script>
-    function openMenu(){
-        document.getElementById("menu-slide").style.width = "300px";
+    function openMenu() {
+        document.getElementById("menu-slide").classList.add("openMenu");
     }
 
-    function closeMenu(){
-        document.getElementById("menu-slide").style.width = "0px";
-        document.getElementById("menu-overlay").style.width = "0px";
+    function closeMenu() {
+        document.getElementById("menu-slide").classList.remove("openMenu");
+        //document.getElementById("menu-overlay").style.width = "0px";
     }
 </script>

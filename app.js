@@ -1,6 +1,8 @@
 //add the express package
-var express = require("express"); 
+var express = require("express");
 var app = express();
+
+//add the projects file
 var projects = require("./projects.json");
 
 //add express handlebars - for html
@@ -11,13 +13,13 @@ var path = require("path");
 
 //add bodyParser - to parse json
 var bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-console.log(projects["1"]);
-
-//add node-mailer
+//add nodemailer
 var nodeMailer = require("nodemailer");
+const { pid } = require("process");
+const helpers = require("./helpers");
 
 //add dotenv
 require("dotenv").config();
@@ -28,36 +30,49 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", ".hbs");
 app.engine(".hbs", exphbs.engine({
     extname: ".hbs",
-    defaultLayout: false
+    defaultLayout: false,
+    helpers: require("./helpers")
 }));
 
 
-//this is the homepage
-app.get("/", function(req, res){
+//routes
+app.get("/", function (req, res) {
     res.render("home");
-}); 
-
-//this is the contact page
-app.get("/contact", function(req, res){
-    res.render("contact", {submitted:"no"});
 });
 
-//step 1- transporter
+app.get("/contact", function (req, res) {
+    res.render("contact", { submitted: "no" });
+});
+
+app.get("/work", function (req, res) {
+    res.render("work", { projects: projects });
+})
+
+app.get("/about", function (req, res) {
+    res.render("about");
+})
+
+app.get("/project/:pid", function (req, res, next) {
+    var pid = req.params.pid;
+    var thisProject = projects[pid.toString()];
+    console.log(thisProject);
+    res.render("project", { project: thisProject });
+}); 
+
 let transporter = nodeMailer.createTransport({
-    service:"gmail",
-    auth:{
+    service: "gmail",
+    auth: {
         user: process.env.email,
         pass: process.env.password
     }
 });
 
-//contact form post
-app.post("/contact", function(req, res){
+app.post("/contact", function (req, res) {
     var name = req.body.fullname;
     var email = req.body.email;
     var note = req.body.note;
     var subject = req.body.subject;
-    //step 2
+
     let mailOptions = {
         from: "sarahduncancodes@gmail.com",
         to: "sarahduncancodes@gmail.com",
@@ -65,21 +80,17 @@ app.post("/contact", function(req, res){
         text: "req.body.note",
         html: "<b>Full Name </b>" + name + "<br><b>Email </b>" + email + "<br><b>Message </b>" + note
     };
-    //step 3
-    transporter.sendMail(mailOptions, function(err, data){
-        if(err){
+
+    transporter.sendMail(mailOptions, function (err, data) {
+        if (err) {
             console.log("Error sending email")
         } else {
             console.log("Email sent!");
-            res.render("contact", {submitted:"yes"});
+            
+            res.render("contact", { submitted: "yes" });
         }
     });
 });
-
-//work page
-app.get("/work", function(req, res){
-    res.render("work", {projects:projects});
-})
 
 //set the port to listen on
 var port = process.env.PORT || 8080;
