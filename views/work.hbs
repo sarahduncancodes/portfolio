@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" title="work page">
 
 <head>
     <meta charset="UTF-8">
@@ -18,7 +18,7 @@
     <div class="work-projects">
         {{#each projects}}
         <a class="work-obj" id="{{id}}" href="/project/{{id}}">
-            <img src="{{coverphoto}}" class="work-img">
+            <img src="{{coverphoto}}" class="work-img" alt-text="A screenshot of the project website.">
             <div class="work-overlay"></div>
             <div class="work-title">{{title}}</div>
         </a>

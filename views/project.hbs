@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" title="specific project page">
 
 <head>
     <meta charset="UTF8">
@@ -23,13 +23,17 @@
             <a class="project-web-name" href="{{project.url}}" target="_blank">{{project.sitename}}</a>
         </div>
         <div class="project-deliv-title">deliverables</div>
-        {{#each project.deliverables}}
-        <li class="project-tools">{{this}}</li>
-        {{/each}}
+        <ul>
+            {{#each project.deliverables}}
+            <li class="project-tools">{{this}}</li>
+            {{/each}}
+        </ul>
         <div class="project-deliv-title">tech stack</div>
-        {{#each project.tools}}
-        <li class="project-tools">{{this}}</li>
-        {{/each}}
+        <ul>
+            {{#each project.tools}}
+            <li class="project-tools">{{this}}</li>
+            {{/each}}
+        </ul>
     </div>
     {{>(partialHelper project.id)}}
     {{>footer}}
