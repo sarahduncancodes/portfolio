@@ -72,6 +72,7 @@ body {
     align-items: center;
     align-content: center;
     flex-direction: row-reverse;
+    top:12px;
 }
 
 .icons div {
@@ -83,6 +84,7 @@ body {
     color: white;
     text-decoration: none;
     cursor: pointer;
+    margin-right:20px;
 }
 
 .menu-icon {
@@ -264,7 +266,10 @@ a {
     padding-left: 8%
 }
 
-.linkedin-block {
+.footer-icon-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
     text-align: right;
     background-color: white;
     margin: auto;
@@ -272,7 +277,7 @@ a {
     text-align: right;
 }
 
-#linkedin-logo {
+#linkedin-logo, #github-logo {
     color: black;
     font-size: 20px;
     padding: 28px;
