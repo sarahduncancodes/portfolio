@@ -60,57 +60,55 @@
         let message = document.getElementById("message").value;
 
         if (name == null || name == '' || name.length < 3) {
-            document.getElementById("name-label").classList.add('red-label');
             document.getElementById("name").classList.add('redBorder');
             document.getElementById("validation-error-name").classList.add('validation-error-name');
             setTimeout(function () {
-                document.getElementById("name-label").classList.remove('red-label');
                 document.getElementById("validation-error-name").classList.remove('validation-error-name');
                 document.getElementById("name").classList.remove('redBorder');
             }, 5000);
+            window.scrollTo(0,0);
             event.preventDefault();
-
             return false;
         }
 
         if (email == null || email == '' || email.length < 3) {
             document.getElementById("email").classList.add('redBorder');
-            document.getElementById("email-label").classList.add('red-label');
             document.getElementById("validation-error-email").classList.add('validation-error-email');
             setTimeout(function () {
-                document.getElementById("email-label").classList.remove('red-label');
                 document.getElementById("validation-error-email").classList.remove('validation-error-email');
                 document.getElementById("email").classList.remove('redBorder');
             }, 5000);
             event.preventDefault()
+            let position = document.getElementById("name-label").getBoundingClientRect()
+            window.scrollTo(position.top, position.left);
             return false;
         }
 
         if (subject == null || subject == '' || subject.length < 3) {
             document.getElementById("subject").classList.add('redBorder');
-            document.getElementById("subject-label").classList.add('red-label');
             document.getElementById("validation-error-subject").classList.add('validation-error-subject');
 
             setTimeout(function () {
-                document.getElementById("subject-label").classList.remove('red-label');
                 document.getElementById("validation-error-subject").classList.remove('validation-error-subject');
                 document.getElementById("subject").classList.remove('redBorder');
             }, 5000);
             event.preventDefault()
+            let position = document.getElementById("email-label").getBoundingClientRect()
+            window.scrollTo(position.top, position.left);
             return false;
         }
 
         if (message.length < 5 || message.length > 500) {
             document.getElementById("message").classList.add('redBorder');
-            document.getElementById("message-label").classList.add('red-label');
             document.getElementById("validation-error-message").classList.add('validation-error-message');
 
             setTimeout(function () {
                 document.getElementById("validation-error-message").classList.remove('validation-error-message');
                 document.getElementById("message").classList.remove('redBorder');
-                document.getElementById("message-label").classList.remove('red-label');
             }, 5000);
             event.preventDefault()
+            let position = document.getElementById("subject-label").getBoundingClientRect()
+            window.scrollTo(position.top, position.left);
             return false;
         }
 
