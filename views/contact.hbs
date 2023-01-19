@@ -14,12 +14,12 @@
                     be more than 3 characters.</span>
             </div>
 
-            <input type="text" id="name" placeholder="Full name"> <br>
+            <input type="text" id="name" placeholder="Full name" name="name"> <br>
 
             <div class="contact-label" id="email-label">Your Email Address (required) <span id="validation-error-email"
                     class="validation-error">Please input the email address that I can respond to you with, which should
                     be more than 3 characters.</span></div>
-            <input type="text" id="email" placeholder="Email Address"><br>
+            <input type="text" id="email" placeholder="Email Address" name="email"><br>
 
             <div class="contact-label" id="subject-label">Subject (required)
                 <span id="validation-error-subject" class="validation-error">Please input the subject of the email,
@@ -27,14 +27,14 @@
                     should be more than 3
                     characters.</span>
             </div>
-            <input type="text" id="subject" placeholder="Subject of your email"><br>
+            <input type="text" id="subject" placeholder="Subject of your email" name="subject"><br>
 
 
             <div class="contact-label" id="message-label">Message (required)
                 <span id="validation-error-message" class="validation-error">Please input a message between 5 and 500
                     characters.</span>
             </div>
-            <textarea rows="5" cols="50" id="message" placeholder="Your message..."></textarea><br>
+            <textarea rows="5" cols="50" id="message" placeholder="Your message..." name="message"></textarea><br>
             <input type="submit" value="Submit" id="submitForm">
 
         </form>
@@ -66,7 +66,7 @@
                 document.getElementById("validation-error-name").classList.remove('validation-error-name');
                 document.getElementById("name").classList.remove('redBorder');
             }, 5000);
-            window.scrollTo(0,0);
+            window.scrollTo(0, 0);
             event.preventDefault();
             return false;
         }
@@ -123,7 +123,6 @@
         var contactHomeButton = document.getElementById("contact-home-button");
         contactForm.style.display = "none";
         contactThanks.style.display = "block";
-        contactHomeButton.style.display = "block"
-
+        contactHomeButton.style.display = "block";
     }
 </script>

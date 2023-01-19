@@ -13,8 +13,8 @@ var path = require("path");
 
 //add bodyParser - to parse json
 var bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.json());
 
 //add nodemailer
 var nodeMailer = require("nodemailer");
@@ -55,22 +55,21 @@ app.get("/about", function (req, res) {
 app.get("/project/:pid", function (req, res, next) {
     var pid = req.params.pid;
     var thisProject = projects[pid.toString()];
-    console.log(thisProject);
     res.render("project", { project: thisProject });
 }); 
 
 let transporter = nodeMailer.createTransport({
     service: "gmail",
     auth: {
-        user: process.env.email,
-        pass: process.env.password
+        user: process.env.email_email,
+        pass: process.env.email_pass
     }
 });
 
 app.post("/contact", function (req, res) {
-    var name = req.body.fullname;
+    var name = req.body.name;
     var email = req.body.email;
-    var note = req.body.note;
+    var message = req.body.message;
     var subject = req.body.subject;
 
     let mailOptions = {
@@ -78,14 +77,15 @@ app.post("/contact", function (req, res) {
         to: "sarahduncancodes@gmail.com",
         subject: subject,
         text: "req.body.note",
-        html: "<b>Full Name </b>" + name + "<br><b>Email </b>" + email + "<br><b>Message </b>" + note
+        html: "<b>Full Name </b>" + name + "<br><b>Email </b>" + email + "<br><b>Message </b>" + message
     };
 
     transporter.sendMail(mailOptions, function (err, data) {
         if (err) {
-            console.log("Error sending email")
+            console.log(err);
+            console.log("Error sending email.")
         } else {
-            console.log("Email sent!");
+            console.log("Email successfully sent.");
             
             res.render("contact", { submitted: "yes" });
         }
