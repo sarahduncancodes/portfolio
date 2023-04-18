@@ -19,8 +19,8 @@
         {{#each projects}}
         <a class="work-obj" id="{{id}}" href="/project/{{id}}">
             <img src="{{coverphoto}}" class="work-img" alt-text="A screenshot of the project website.">
-            <div class="work-overlay"></div>
             <div class="work-title">{{title}}</div>
+            <div class="work-hinttext">{{organisation}}</div>
         </a>
         {{/each}}
     </div>
@@ -33,25 +33,27 @@
     var one = document.getElementById("1");
     var two = document.getElementById("2");
     var three = document.getElementById("3");
-
+    var four = document.getElementById("4");
 
     function showWork() {
         one.style.display = "inline-block";
         two.style.display = "inline-block";
         three.style.display = "none";
+        four.style.display = "inline-block";
     }
 
     function showPassion() {
         one.style.display = "none";
         two.style.display = "none";
         three.style.display = "inline-block";
-
+        four.style.display = "none";
     }
 
     function showAll() {
         one.style.display = "inline-block";
         two.style.display = "inline-block";
         three.style.display = "inline-block";
+        four.style.display = "inline-block";
     }
 
 </script>
